@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TV_Bushuev"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Телевизор" Height="450" Width="800" MinHeight="450" MinWidth="800" FontFamily="Arial Narrow">
+    <Grid Background="#FF383838">
+        <Label x:Name="NameChannel"
+               Content="" 
+               HorizontalAlignment="Left" 
+               Margin="20,10,0,0" 
+               VerticalAlignment="Top" 
+               Foreground="White"/>
+        <MediaElement x:Name="VideoPlayer" LoadedBehavior="Manual" Volume="0.5" Stretch="Uniform" Margin="20,41,20,90" MediaEnded="NextChannel"/>
+
+        <Grid Height="80"
+              VerticalAlignment="Bottom"
+              Margin="10,0,10,10">
+            <Button Click="BackChannel" 
+                    Content="Назад" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" 
+                    Width="100" 
+                    Height="25" 
+                    Background="White"/>
+            <Button Click="NextChannel" Content="Вперед" HorizontalAlignment="Left" Margin="110,0,0,0" VerticalAlignment="Top" Width="100" Height="25" Background="White"/>
+
+            <Button Click="DownSound_Click" Content="Тише" HorizontalAlignment="Right" Margin="0,0,110,0" VerticalAlignment="Top" Width="100" Height="25" Background="White"/>
+            <Button Click="UpSound_Click" Content="Громче" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Height="25" Background="White"/>
+        </Grid>
     </Grid>
 </Window>
